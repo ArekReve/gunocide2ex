@@ -29,7 +29,7 @@ cSprite::~cSprite()
 
 ///lädt ein BMP in das image-Surface
 ///gibt false zurück falls es schief geht
-bool cSprite::loadBMP(char *path)
+bool cSprite::loadBMP(const char *path)
 {
 	image=SDL_LoadBMP(path);
 	if(!image)

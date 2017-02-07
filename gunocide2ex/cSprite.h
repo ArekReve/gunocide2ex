@@ -26,7 +26,7 @@ public:
 	cSprite();
 	~cSprite();
 
-	bool 	loadBMP(char *path);
+	bool 	loadBMP(const char *path);
 	void 	render(SDL_Surface *screen,int x,int y);
 	void 	setColorKey(int r,int g,int b);
 

@@ -53,7 +53,7 @@ public:
 	cSpriteAnim();
 	~cSpriteAnim();
 
-	bool	load(char *path);
+	bool	load(const char *path);
 	void	setColorKey(int r,int g,int b);
 	void	render(SDL_Surface *screen,cAnim *anim,int x,int y);
 	int		getMaxNum();

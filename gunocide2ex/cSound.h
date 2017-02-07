@@ -35,7 +35,7 @@ public:
 
 	bool			init();
 	void				close();
-	bool			playogg(char *path);
+	bool			playogg(const char *path);
 	void				stopogg();
 	bool			loadwav(int index,char *path);
 	void				playwav(int index);

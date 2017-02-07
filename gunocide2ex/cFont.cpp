@@ -62,7 +62,7 @@ bool cFont::initttf()
 }
 
 ///lädt einen TTF-Font ein
-bool cFont::load(char *path,int size)
+bool cFont::load(const char *path,int size)
 {
 	font = TTF_OpenFont(path,size);
 	if(font==NULL)

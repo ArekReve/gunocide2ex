@@ -180,7 +180,6 @@ void cEffectMan::update()
 	{
 		if(!i->update())
 			i=lEffects.erase(i);
-		if(i==NULL)break;
 	}
 
     for(p=lParticles.begin();p!=lParticles.end();++p)
@@ -190,8 +189,6 @@ void cEffectMan::update()
 		if(!p->active())
 		{
 			p=lParticles.erase(p);
-			if(p==NULL)
-				break;
 		}
 	}
 

@@ -59,6 +59,7 @@
 #include <time.h>
 #include <stdarg.h>
 #include <new>
+using namespace std;
 
 #ifndef	WIN32
 #include <unistd.h>

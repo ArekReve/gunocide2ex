@@ -92,7 +92,7 @@ bool cSound::init()
 }
 
 ///spielt eine ogg-datei ab
-bool cSound::playogg(char *path)
+bool cSound::playogg(const char *path)
 {
 	if(!sound_on)
 		return true;

@@ -145,7 +145,7 @@ cSpriteAnim::~cSpriteAnim()
 }
 
 ///einladen einer Animation aus einer Datei
-bool cSpriteAnim::load(char *path)
+bool cSpriteAnim::load(const char *path)
 {
 	FILE 	*file;
 	char	buffer[512];

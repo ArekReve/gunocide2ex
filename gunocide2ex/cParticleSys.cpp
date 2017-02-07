@@ -81,9 +81,6 @@ void cParticleSys::update()
 		if(time-p->getstarttime()>p->getlifetime())
 		{
 			p=lParticles.erase(p);
-			if(p==NULL)
-				break;
-			
 		}
 	}
 

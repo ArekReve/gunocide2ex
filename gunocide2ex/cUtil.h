@@ -31,7 +31,7 @@ public:
 
 	void	updatetime();
 	float 	sync(float Faktor);
-	char*	getconfigvalue(char *path,char *value);
+	char*	getconfigvalue(const char *path,const char *value);
 	void	drawpixel(SDL_Surface *screen, int x, int y,Uint8 R, Uint8 G,Uint8 B);
 	bool	collision(SDL_Rect objekt1,SDL_Rect objekt2);	
 

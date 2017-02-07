@@ -34,7 +34,7 @@ public:
 	static void		delInstance();
 	static bool		initttf();
 
-	bool			load(char *path,int size);
+	bool			load(const char *path,int size);
 	void			setcolor(int r,int g,int b);
 	void			setshader(int r,int g,int b);
 	void			print(SDL_Surface *screen,int posx,int posy,const char *fmt, ...);

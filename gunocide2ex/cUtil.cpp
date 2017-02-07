@@ -85,7 +85,7 @@ bool cUtil::collision(SDL_Rect objekt1,SDL_Rect objekt2)
 }
 
 ///liest einen wert aus einer config-datei
-char* cUtil::getconfigvalue(char *path,char *value)
+char* cUtil::getconfigvalue(const char *path,const char *value)
 {
 	FILE	*file;
 	char	buffer[512];

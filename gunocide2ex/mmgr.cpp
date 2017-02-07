@@ -229,9 +229,9 @@ static	void	doCleanupLogOnFirstRun()
 
 static	const char	*sourceFileStripper(const char *sourceFile)
 {
-	char	*ptr = strrchr(sourceFile, '\\');
+	char	*ptr = strrchr((char *)sourceFile, '\\');
 	if (ptr) return ptr + 1;
-	ptr = strrchr(sourceFile, '/');
+	ptr = strrchr((char *)sourceFile, '/');
 	if (ptr) return ptr + 1;
 	return sourceFile;
 }

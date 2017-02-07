@@ -1,0 +1,19 @@
+Installation of Gunocide II EX:
+--------------------------------
+
+1) Extract the whole package in a temporary directory. 
+
+2) $make
+   $make install
+
+3) to play the game type in "g2ex"
+
+4) delete the tempory package and enjoy playing g2ex 
+
+
+
+You need the following libraries to compile g2ex:
+
+- SDL 1.2.x (+)
+- SDL TTF 2.0.3 (+)
+- SDL_mixer 1.2.1 (+)

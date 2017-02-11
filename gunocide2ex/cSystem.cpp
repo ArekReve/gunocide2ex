@@ -211,7 +211,7 @@ bool cSystem::loadsounds()
 	return true;	
 }
 
-///Tastensteuerung für die Spieler
+///Tastensteuerung fï¿½r die Spieler
 void cSystem::control()
 {
 	cKeyboard	*pKeyboard=cKeyboard::getInstance();
@@ -221,7 +221,7 @@ void cSystem::control()
 	cMenu		*pMenu=cMenu::getInstance();
 	cSound		*pSound=cSound::getInstance();
 
-	///spiel beenden und ab ins menü
+	///spiel beenden und ab ins menï¿½
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -254,14 +254,14 @@ void cSystem::control()
 
 
 	///wenn die Pause aktiviert ist, soll der Spieler keinen weiteren
-	///Eingaben über die Tastatur eingeben können
+	///Eingaben ï¿½ber die Tastatur eingeben kï¿½nnen
 	if(bpause || bgameover || gamestate!=GSTATE_INGAME)
 		return;
 
 	pPlayerMan=cPlayerMan::getInstance();
 	for(int p=0;p<pPlayerMan->getnum();p++)
 	{
-		///wenn der spieler tot ist, gehen wir einfach zum nächsten
+		///wenn der spieler tot ist, gehen wir einfach zum nï¿½chsten
 		if(!pPlayerMan->alive(p))
 			continue;
 		
@@ -349,7 +349,7 @@ void cSystem::setgamestate(int state)
 }
 
 
-///überprüft das Spiel auf den jeweiligen Spielmodus
+///ï¿½berprï¿½ft das Spiel auf den jeweiligen Spielmodus
 ///und wie es darauf reagieren soll
 void cSystem::check_env()
 {
@@ -396,7 +396,7 @@ void cSystem::check_env()
 		{
 			bnextwave=false;
 			nextwave_delay=0;
-			sprintf(buffer,"/usr/local/games/gunocide2ex/lvl/stage%i.lvl\0",act_stage);
+			sprintf(buffer,"/usr/local/games/gunocide2ex/lvl/stage%i.lvl",act_stage);
 			
 			cStage::delInstance();
 			pStage=cStage::getInstance();
@@ -566,7 +566,7 @@ void cSystem::sysrender()
 	if(bpause)pFont->print(screen,300,400,"PAUSE\0");
 }
 
-///hier wird überprüft ob die Spieler tot sind
+///hier wird ï¿½berprï¿½ft ob die Spieler tot sind
 ///und andere Dinge
 void cSystem::sysupdate()
 {
@@ -613,7 +613,7 @@ void cSystem::sysupdate()
 
 	}
 
-	///wie lange wird gameover noch angezeigt bis es ins mneü zurück geht
+	///wie lange wird gameover noch angezeigt bis es ins mneï¿½ zurï¿½ck geht
 	if(bgameover)
 	{
 		act_time=SDL_GetTicks();
@@ -623,7 +623,7 @@ void cSystem::sysupdate()
 			gamestate=GSTATE_MENU;
 			pMenu->setmenustate(MSTATE_HSCORE);
 			
-			///überprüfen ob der/die spieler in die highscore kommt
+			///ï¿½berprï¿½fen ob der/die spieler in die highscore kommt
 			///vorher bauen wir aber noch die hitratio zusammen
 			if(pPlayerMan->getnum()==1)
 			{
@@ -686,7 +686,7 @@ bool cSystem::getnextwave()
 }
 
 ///einlesen der Tastaturkonfiguration
-///Standard-Werte werden gesetzt wenn's fehlschlägt
+///Standard-Werte werden gesetzt wenn's fehlschlï¿½gt
 void cSystem::loadkeymaps()
 {
 	cUtil	*pUtil=cUtil::getInstance();
@@ -694,7 +694,7 @@ void cSystem::loadkeymaps()
 	
 	printf("reading key maps\n");
 	
-	///linke taste für spieler1
+	///linke taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P1_LEFT");
 	if(!buffer)
 	{
@@ -707,7 +707,7 @@ void cSystem::loadkeymaps()
 		printf("player one left key:%s\n",SDL_GetKeyName((SDLKey)keymap[0].left));
 	}
 
-	///rechte taste für spieler1
+	///rechte taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P1_RIGHT");
 	if(!buffer)
 	{
@@ -720,7 +720,7 @@ void cSystem::loadkeymaps()
 		printf("player one right key:%s\n",SDL_GetKeyName((SDLKey)keymap[0].right));
 	}
 
-	///schuss taste für spieler1
+	///schuss taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P1_SHOT");
 	if(!buffer)
 	{
@@ -733,7 +733,7 @@ void cSystem::loadkeymaps()
 		printf("player one shot key:%s\n",SDL_GetKeyName((SDLKey)keymap[0].shot));
 	}
 
-	///special taste für spieler1
+	///special taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P1_SPECIAL");
 	if(!buffer)
 	{
@@ -747,7 +747,7 @@ void cSystem::loadkeymaps()
 	}
 
 	/////////////spieler 2
-	///linke taste für spieler1
+	///linke taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P2_LEFT");
 	if(!buffer)
 	{
@@ -760,7 +760,7 @@ void cSystem::loadkeymaps()
 		printf("player two left key:%s\n",SDL_GetKeyName((SDLKey)keymap[1].left));
 	}
 
-	///rechte taste für spieler1
+	///rechte taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P2_RIGHT");
 	if(!buffer)
 	{
@@ -773,7 +773,7 @@ void cSystem::loadkeymaps()
 		printf("player two right key:%s\n",SDL_GetKeyName((SDLKey)keymap[1].right));
 	}
 
-	///schuss taste für spieler1
+	///schuss taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P2_SHOT");
 	if(!buffer)
 	{
@@ -786,7 +786,7 @@ void cSystem::loadkeymaps()
 		printf("player two shot key:%s\n",SDL_GetKeyName((SDLKey)keymap[1].shot));
 	}
 
-	///special taste für spieler1
+	///special taste fï¿½r spieler1
 	buffer=pUtil->getconfigvalue("/usr/local/games/gunocide2ex/config.cfg","P2_SPECIAL");
 	if(!buffer)
 	{

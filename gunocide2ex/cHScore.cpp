@@ -57,7 +57,7 @@ bool cHScore::load()
 	{
 		for(int s=0;s<10;s++)
 		{
-			fscanf(file,"%s %i %i %i\n",&score[type][s].name,
+			fscanf(file,"%s %ld %i %i\n",score[type][s].name,
                        					&score[type][s].score,
 										&score[type][s].hitratio,
 										&score[type][s].waves);
@@ -69,7 +69,7 @@ bool cHScore::load()
 	return true;
 }
 
-///erstellen der dummy tables für die highscore liste
+///erstellen der dummy tables fï¿½r die highscore liste
 bool cHScore::createdummytables()
 {
 	//generieren der dummy highscores
@@ -110,7 +110,7 @@ void cHScore::delInstance()
 
 ///abspeichern der Highscores
 ///in der Datei hscore.dat
-///gibt true oder false zurück..je nachdem =)
+///gibt true oder false zurï¿½ck..je nachdem =)
 bool cHScore::save()
 {
 	FILE	*file=NULL;
@@ -127,7 +127,7 @@ bool cHScore::save()
 	{
 		for(int s=0;s<10;s++)
 		{
-			fprintf(file,"%s %i %i %i\n",score[type][s].name,
+			fprintf(file,"%s %ld %i %i\n",score[type][s].name,
                        					score[type][s].score,
 										score[type][s].hitratio,
 										score[type][s].waves);
@@ -139,13 +139,13 @@ bool cHScore::save()
 	return true;
 }
 
-///anzeigen der Highscores abhängig vom gewählten Modus
+///anzeigen der Highscores abhï¿½ngig vom gewï¿½hlten Modus
 void cHScore::render(SDL_Surface *screen)
 {
 	cFont	*pFont=cFont::getInstance();
 
-	//eine for-schleife funzt hier nicht, da die abstände zwischen den einzelnen
-	//score-plätzen der grafik nicht gleich gross sind..verflucht sei oli ;)
+	//eine for-schleife funzt hier nicht, da die abstï¿½nde zwischen den einzelnen
+	//score-plï¿½tzen der grafik nicht gleich gross sind..verflucht sei oli ;)
 	pFont->setcolor(255,0,0);
 	switch(showmode)
 	{
@@ -406,16 +406,16 @@ void cHScore::render(SDL_Surface *screen)
 	pFont->setcolor(255,255,255);
 }
 
-///überprüfen ob die score es in die highscore-liste geschafft hat
+///ï¿½berprï¿½fen ob die score es in die highscore-liste geschafft hat
 ///wenn ja, setzen wir eine flag dass der name eingegeben werden muss sobald
-///wir im menü sind
+///wir im menï¿½ sind
 void cHScore::checkfornewentry(long tscore,int ratio,int waves,int gmode)
 {
 	bool		check=false;
 	SCOREENTRY	temp;
 
-	///wenn der score nicht mal den letzten platz schlägt
-	///können wir getrost rausgehen...der spieler ist einfach ein looser ;)
+	///wenn der score nicht mal den letzten platz schlï¿½gt
+	///kï¿½nnen wir getrost rausgehen...der spieler ist einfach ein looser ;)
 	if(tscore<score[gmode][9].score)
 		return;
 
@@ -429,7 +429,7 @@ void cHScore::checkfornewentry(long tscore,int ratio,int waves,int gmode)
 	bnewscore=true;
 
 	///hier ein ganz einfacher bubble-sort
-	///für ne highscore-liste benötigen wir kein merge oder ähnliches
+	///fï¿½r ne highscore-liste benï¿½tigen wir kein merge oder ï¿½hnliches
 	while(!check)
 	{
 		check=true;
@@ -440,7 +440,7 @@ void cHScore::checkfornewentry(long tscore,int ratio,int waves,int gmode)
 			{
 				check=false;
 
-				///vertauschen der einträge
+				///vertauschen der eintrï¿½ge
 				memcpy(&temp,&score[gmode][i],sizeof(SCOREENTRY));
 				
 				memcpy(&score[gmode][i],&score[gmode][i-1],sizeof(SCOREENTRY));
@@ -493,7 +493,7 @@ void cHScore::update()
 		}
 	}
 
-	//wir gehen einen buchstaben zurück
+	//wir gehen einen buchstaben zurï¿½ck
 	kevent=pKeyboard->getkey(SDLK_BACKSPACE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -503,7 +503,7 @@ void cHScore::update()
 		kevent=NULL;
 	} else kevent=NULL;
 
-	//ein leerzeichen einfügen
+	//ein leerzeichen einfï¿½gen
 	kevent=pKeyboard->getkey(SDLK_SPACE);
 	if(kevent && kevent->pressed==1)
 	{

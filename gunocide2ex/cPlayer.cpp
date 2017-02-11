@@ -105,7 +105,7 @@ bool cPlayer::load(int type)
 	anim=1;
 	for(i=MOVE_LEFT;i<MOVE_LEFT+3;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/player/%c/links%i.txt\0",c,anim);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/player/%c/links%i.txt",c,anim);
 		anim++;
 
 		if(!gfx_sprite[i].load(buffer))
@@ -124,7 +124,7 @@ bool cPlayer::load(int type)
 	anim=1;
 	for(i=MOVE_RIGHT;i<MOVE_RIGHT+3;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/player/%c/rechts%i.txt\0",c,anim);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/player/%c/rechts%i.txt",c,anim);
 		anim++;
 
 		if(!gfx_sprite[i].load(buffer))
@@ -184,7 +184,7 @@ int cPlayer::getposy()
 	return posy;
 }
 
-///X-Koordinate des Spielers zurückgeben
+///X-Koordinate des Spielers zurï¿½ckgeben
 int cPlayer::getposx()
 {
 	return posx;
@@ -220,7 +220,7 @@ void cPlayer::update()
 	anim_sprite[mvstate].update();
 
 	//Spielerposition updaten
-	//wenn keine Bewegungstaste mehr gedrückt wurde in die Ausgangsposition
+	//wenn keine Bewegungstaste mehr gedrï¿½ckt wurde in die Ausgangsposition
 	//wechseln
 	if(bmoveleft || bmoveright)
 	{
@@ -235,12 +235,12 @@ void cPlayer::update()
 		mvstate=0;
 	}
 
-	//überprüfen ob der Spieler ausserhalb des Bildschirms ist
+	//ï¿½berprï¿½fen ob der Spieler ausserhalb des Bildschirms ist
 	//wenn ja, ab wieder mit ihm rein ;)
 	if(posx<0)posx=0;
 	if(posx>590)posx=590;
 
-	//>>>>muss für die schüsse abgeändert werden!!!<<<<
+	//>>>>muss fï¿½r die schï¿½sse abgeï¿½ndert werden!!!<<<<
 	//Animationsstufe weiterschalten wenn er sich zur Seite bewegt
 	if(mvdirection!=MOVE_NORMAL)
 	{
@@ -289,7 +289,7 @@ void cPlayer::update()
 	}
 
 	///updaten des displays
-	if(delay_mg<80)       //anzeige für die schüsse..wieviel er noch ballern kann
+	if(delay_mg<80)       //anzeige fï¿½r die schï¿½sse..wieviel er noch ballern kann
 	{
 		act_time=SDL_GetTicks();
 		if(act_time-delay_mg_act>100)
@@ -336,8 +336,8 @@ void cPlayer::update()
 
 
 
-///gibt eine SDL_Rect Struktur zurück, die für eine Kollisionsabfrage
-///benötigt wird
+///gibt eine SDL_Rect Struktur zurï¿½ck, die fï¿½r eine Kollisionsabfrage
+///benï¿½tigt wird
 SDL_Rect cPlayer::getcolrect(int offx,int offy)
 {
 	SDL_Rect rc;
@@ -350,13 +350,13 @@ SDL_Rect cPlayer::getcolrect(int offx,int offy)
 	return rc;
 }
 
-///wurde die Taste zum Feuern gedrückt ??
+///wurde die Taste zum Feuern gedrï¿½ckt ??
 void cPlayer::setbshot(bool wert)
 {
 	bshot=wert;
 }
 
-///hinzufügen der schüsse für den spieler
+///hinzufï¿½gen der schï¿½sse fï¿½r den spieler
 void cPlayer::addshots()
 {
 	cWeaponMan	*pWeaponMan=cWeaponMan::getInstance();
@@ -368,7 +368,7 @@ void cPlayer::addshots()
 
 	switch(typ_player)
 	{
-		//hinzufügen der Schüsse für den BANSHEE
+		//hinzufï¿½gen der Schï¿½sse fï¿½r den BANSHEE
 		case PLAYER_BANSHEE:
 			if(typ_weapon==7)
 			{
@@ -395,7 +395,7 @@ void cPlayer::addshots()
 				pSound->playwav(7);
 			}
 			break;
-		case PLAYER_RAGE:///schüsse für den rage
+		case PLAYER_RAGE:///schï¿½sse fï¿½r den rage
 			if(typ_weapon==10)
 			{
 				pWeaponMan->add(12,posx+10,posy+6,0,WeaponVars::Speed[10],nr,WeaponVars::Energy[10]);
@@ -443,7 +443,7 @@ void cPlayer::addshots()
 	}
 }
 
-///hinzufügen eines Specials
+///hinzufï¿½gen eines Specials
 void cPlayer::addspecial()
 {
 	cWeaponMan	*pWeaponMan=cWeaponMan::getInstance();
@@ -554,13 +554,13 @@ void cPlayer::setshieldstate(int wert)
 		shielddelay=SDL_GetTicks();
 }
 
-///einen schuss für die statistik des spielers hinzufügen
+///einen schuss fï¿½r die statistik des spielers hinzufï¿½gen
 void cPlayer::addshot_treffer()
 {
 	shot_treffer++;
 }
 
-///anzahl der getroffen schüsse zurückgeben
+///anzahl der getroffen schï¿½sse zurï¿½ckgeben
 long cPlayer::getshot_treffer()
 {
 	if(shot_treffer>0)
@@ -575,26 +575,26 @@ long cPlayer::getshot_anzahl()
 	return shot_gefeuert;
 }
 
-///die werte für die schuss-statistik des spielers zurücksetzen
+///die werte fï¿½r die schuss-statistik des spielers zurï¿½cksetzen
 void cPlayer::shot_reset()
 {
 	shot_gefeuert=0;
 	shot_treffer=0;
 }
 
-///rückgabe der punkte des spielers
+///rï¿½ckgabe der punkte des spielers
 long int cPlayer::getscore()
 {
 	return score;
 }
 
-///der spieler hat einen weiteren angriff überlebt
+///der spieler hat einen weiteren angriff ï¿½berlebt
 void cPlayer::addwave()
 {
 	waves++;
 }
 
-///wievele angriffe(stages) hat er überlebt
+///wievele angriffe(stages) hat er ï¿½berlebt
 int cPlayer::getwaves()
 {
 	return waves;

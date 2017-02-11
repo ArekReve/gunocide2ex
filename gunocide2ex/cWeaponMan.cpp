@@ -32,40 +32,40 @@ cWeaponMan::cWeaponMan()
 
 cWeaponMan::~cWeaponMan()
 {
-	///komplette Waffenliste löschen
+	///komplette Waffenliste lï¿½schen
 	lWeapon.clear();
 }
 
-///lädt alle Grafiken für die Waffen
+///lï¿½dt alle Grafiken fï¿½r die Waffen
 bool cWeaponMan::load()
 {
 	char 	buffer[256];
 	int 	i=0;
 
-	///einladen der Waffen für die Gegner
+	///einladen der Waffen fï¿½r die Gegner
 	for(i=0;i<7;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/%i/ani.txt\0",i);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/%i/ani.txt",i);
 		if(!gfx_sprite[i].load(buffer))
 			return false;
 		gfx_sprite[i].setColorKey(0,0,0);
 	}
 
-	///einladen der Waffen für die Spieler
+	///einladen der Waffen fï¿½r die Spieler
 	///i-6 da die Dateien mit 1 Anfangen, nicht mit 0
 	for(i=7;i<18;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/norm/%is.txt\0",i-6);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/norm/%is.txt",i-6);
 		if(!gfx_sprite[i].load(buffer))
 			return false;
 		gfx_sprite[i].setColorKey(0,0,0);
 	}
 
-	///einladen der Special für die Spieler
+	///einladen der Special fï¿½r die Spieler
 	///i-6 da die Dateien mit 1 Anfangen, nicht mit 0
 	for(i=18;i<23;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/shunter/%i.txt\0",i-17);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/schuss/shunter/%i.txt",i-17);
 		if(!gfx_sprite[i].load(buffer))
 			return false;
 		gfx_sprite[i].setColorKey(0,0,0);
@@ -149,7 +149,7 @@ void cWeaponMan::update()
 						pPlayerMan->addshot_treffer(akt_weapon->getowner());
 
 						////////////////////////////////////////////////////////////////////////
-						//energie abziehen und überprüfen ob er tot ist
+						//energie abziehen und ï¿½berprï¿½fen ob er tot ist
 						pEnemy->setenergy(pEnemy->getenergy()-akt_weapon->getenergy());
 						
 						if(pEnemy->getenergy()<=0)
@@ -173,7 +173,7 @@ void cWeaponMan::update()
 							pEffectMan->add(EFFECT_PHIT,akt_weapon->getposx(),akt_weapon->getposy());
 						}
 
-						//2. phase eines specials ausführen
+						//2. phase eines specials ausfï¿½hren
 						if(akt_weapon->getsprite()==18 || akt_weapon->getsprite()==21)
 							addspecial(akt_weapon->getsprite(),akt_weapon->getposx(),akt_weapon->getposy());
 
@@ -187,7 +187,7 @@ void cWeaponMan::update()
 	}
 }
 
-///zeichnen aller Schüsse
+///zeichnen aller Schï¿½sse
 void cWeaponMan::render(SDL_Surface *screen)
 {
   LISTWEAPON::iterator akt_weapon;
@@ -200,7 +200,7 @@ void cWeaponMan::render(SDL_Surface *screen)
 
 }
 
-///einen neuen Schuss der verketten Liste hinzufügen
+///einen neuen Schuss der verketten Liste hinzufï¿½gen
 void cWeaponMan::add(int type,int posx,int posy,int dirx,int diry,int owner,int energy)
 {
 	cWeapon *temp;
@@ -214,7 +214,7 @@ void cWeaponMan::add(int type,int posx,int posy,int dirx,int diry,int owner,int 
 	temp->setowner(owner);
 	temp->setenergy(energy);
 
-	///die liste ist leer also fügen wir das teil am anfang ein
+	///die liste ist leer also fï¿½gen wir das teil am anfang ein
 	lWeapon.push_back(*temp);
 	delete temp;
 }
@@ -257,8 +257,8 @@ void cWeaponMan::delInstance()
 	}
 }
 
-///führt die specials des spielers aus wenn er trifft
-///z.b. gehen die schüsse auseinander oder os
+///fï¿½hrt die specials des spielers aus wenn er trifft
+///z.b. gehen die schï¿½sse auseinander oder os
 void cWeaponMan::addspecial(int type,int posx,int posy)
 {
 	if(type==18)//banshee
@@ -282,7 +282,7 @@ void cWeaponMan::addspecial(int type,int posx,int posy)
 }
 
 /************************************************************************
-Variablen für die Geschwindigkeit der einzelnen Schüsse
+Variablen fï¿½r die Geschwindigkeit der einzelnen Schï¿½sse
 *************************************************************************/
 int WeaponVars::Speed[19]={
 						300,//enforcer

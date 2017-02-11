@@ -42,7 +42,7 @@ bool cStage::load(char *path,cEnemyMan *pEnemyMan)
 	int	index=0;
 	int	balive=0;
 
-	//Datei öffnen und false zurückgeben wenn es schief geht
+	//Datei ï¿½ffnen und false zurï¿½ckgeben wenn es schief geht
 	file=fopen(path,"r");
 	if(!file)
 	{
@@ -54,7 +54,7 @@ bool cStage::load(char *path,cEnemyMan *pEnemyMan)
 	//einlesen des Hintergrundes
 	fscanf(file,"%i",&temp);
 
-	sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/bgs/stage%i.bmp\0",temp);
+	sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/bgs/stage%i.bmp",temp);
 	gfx_background=new cSprite();
 	if(!gfx_background->loadBMP(buffer))
 	{
@@ -63,7 +63,7 @@ bool cStage::load(char *path,cEnemyMan *pEnemyMan)
 		return false;
 	}
 
-	///einladen der Gegnerdaten und dem EnemyManager hinzufügen
+	///einladen der Gegnerdaten und dem EnemyManager hinzufï¿½gen
 	while(!feof(file))
 	{
 		fscanf(file,"%i",&tx);		//X-Koordinate
@@ -71,7 +71,7 @@ bool cStage::load(char *path,cEnemyMan *pEnemyMan)
   		fscanf(file,"%i",&ttyp);	//Gegner-Typ
 		fscanf(file,"%i",&atyp);	//Angriffstyp?? wird nicht mehr gebraucht
 		fscanf(file,"%i",&typ_powerup); //PowerUp-Typ
-		fscanf(file,"%i",&balive);	//gibts den Gegner eigentlich? Hätte man damals schöner machen sollen ;)
+		fscanf(file,"%i",&balive);	//gibts den Gegner eigentlich? Hï¿½tte man damals schï¿½ner machen sollen ;)
 
 		if(balive==1)
 		{

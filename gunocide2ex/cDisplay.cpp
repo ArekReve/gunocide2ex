@@ -37,7 +37,7 @@ void cDisplay::setleben(int wert)
 }
 
 
-///Anzahl der Leben zurückerhalten
+///Anzahl der Leben zurï¿½ckerhalten
 int cDisplay::getleben()
 {
 	return num_leben;
@@ -49,7 +49,7 @@ void cDisplay::setpowerup(int wert)
 	num_powerup=wert;
 }
 
-///Anzahl der PowerUps zum Anzeigen zurückgeben
+///Anzahl der PowerUps zum Anzeigen zurï¿½ckgeben
 int cDisplay::getpowerup()
 {
 	return num_powerup;
@@ -120,7 +120,7 @@ void cDisplay::update()
 	gfx_specialanim.update();
 }
 
-///einladen der Grafiken für das Display
+///einladen der Grafiken fï¿½r das Display
 bool cDisplay::load(int playertyp,int nr)
 {
 	char buffer[256];
@@ -128,7 +128,7 @@ bool cDisplay::load(int playertyp,int nr)
 	//minigun anzeige
 	for(int i=0;i<5;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/display/m%i.bmp\0",i);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/display/m%i.bmp",i);
 		if(!gfx_mg[i].loadBMP(buffer))
 			return false;
 		gfx_mg[i].setColorKey(0,0,0);
@@ -148,7 +148,7 @@ bool cDisplay::load(int playertyp,int nr)
 	gfx_score.setColorKey(0,0,0);
 
 	//leben
-	sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/display/l%i.bmp\0",playertyp);
+	sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/display/l%i.bmp",playertyp);
 	if(!gfx_leben.loadBMP(buffer))
 		return false;
 	gfx_leben.setColorKey(0,0,0);

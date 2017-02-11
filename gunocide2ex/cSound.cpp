@@ -64,7 +64,7 @@ void cSound::delInstance()
 }
 
 ///Initialisierung von FMOD
-///gibt false zurück wenn etwas schief geht
+///gibt false zurï¿½ck wenn etwas schief geht
 bool cSound::init()
 {
 	cUtil	*pUtil=cUtil::getInstance();
@@ -119,7 +119,7 @@ void cSound::close()
 	printf("sound system closed\n");
 }
 
-///hält ein ogg-file an
+///hï¿½lt ein ogg-file an
 void cSound::stopogg()
 {
 	if(!sound_on)
@@ -149,7 +149,7 @@ bool cSound::loadwav(int index,char *path)
 
 	if(sample[index]==NULL)
 	{
-		printf("Could not load sample %s:\n",path,SDL_GetError());
+		printf("Could not load sample %s:\n %s",path,SDL_GetError());
 		return false;
 	}
 	else printf("loaded succesfully sample %s\n",path);

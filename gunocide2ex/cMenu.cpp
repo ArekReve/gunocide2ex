@@ -70,7 +70,7 @@ void cMenu::delInstance()
 	}
 }
 
-///aktualisieren des Menüs
+///aktualisieren des Menï¿½s
 void cMenu::update()
 {
 	switch(menustate)
@@ -102,7 +102,7 @@ void cMenu::update()
 	}
 }
 
-///Das Menü zeichnen
+///Das Menï¿½ zeichnen
 void cMenu::render(SDL_Surface *screen)
 {
 	switch(menustate)
@@ -134,7 +134,7 @@ void cMenu::render(SDL_Surface *screen)
 	}
 }
 
-///einladen aller Grafiken usw. für das Menü
+///einladen aller Grafiken usw. fï¿½r das Menï¿½
 bool cMenu::load()
 {
 	cSound		*pSound=cSound::getInstance();
@@ -221,7 +221,7 @@ void cMenu::update_startbild()
 	KeyEvent	*kevent=NULL;
 	cSystem		*pSystem=cSystem::getInstance();
 
-	///spiel beenden und ab ins menü
+	///spiel beenden und ab ins menï¿½
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -230,7 +230,7 @@ void cMenu::update_startbild()
 		kevent=NULL;
 	} else kevent=NULL;
 
-	//ins hauptmenü
+	//ins hauptmenï¿½
 	kevent=pKeyboard->getkey(SDLK_SPACE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -246,7 +246,7 @@ void cMenu::update_polyfrag()
 	KeyEvent	*kevent=NULL;
 	cSystem		*pSystem=cSystem::getInstance();
 
-	///spiel beenden und ab ins menü
+	///spiel beenden und ab ins menï¿½
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -255,7 +255,7 @@ void cMenu::update_polyfrag()
 		kevent=NULL;
 	} else kevent=NULL;
 
-	//ins hauptmenü
+	//ins hauptmenï¿½
 	kevent=pKeyboard->getkey(SDLK_SPACE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -352,7 +352,7 @@ void cMenu::update_main()
 	selection[3].h=310;
 	selection[3].w=610;
 
-	///spiel beenden und ab ins menü
+	///spiel beenden und ab ins menï¿½
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -367,7 +367,7 @@ void cMenu::update_main()
 		if(pUtil->collision(selection[i],mouse))
 		{
 			text_main[i]=true;
-			///wir schaun auch noch gerade nach wenn der mausbutton gedrückt wurde
+			///wir schaun auch noch gerade nach wenn der mausbutton gedrï¿½ckt wurde
 			if(pKeyboard->getmousepressed()>0)
 			{
 				pSound->playwav(2);
@@ -468,7 +468,7 @@ void cMenu::update_modi()
 	mouse.w=pKeyboard->getmousex()+16;
 	mouse.h=pKeyboard->getmousey()+16;
 
-	//zurück
+	//zurï¿½ck
 	selection[0].y=330;
 	selection[0].x=250;
 	selection[0].h=400;
@@ -498,7 +498,7 @@ void cMenu::update_modi()
 	selection[4].h=310;
 	selection[4].w=600;
 
-	///ins hauptmenü zurück
+	///ins hauptmenï¿½ zurï¿½ck
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -514,7 +514,7 @@ void cMenu::update_modi()
 
 		{
 			text_gmode[i]=true;
-			///wir schaun auch noch gerade nach wenn der mausbutton gedrückt wurde
+			///wir schaun auch noch gerade nach wenn der mausbutton gedrï¿½ckt wurde
 			if(pKeyboard->getmousepressed()>0)
 			{
 				pSound->playwav(2);
@@ -535,7 +535,7 @@ void cMenu::update_modi()
 						
 						pPlayerMan->create(num_player);
 
-						//falls es schon array mit den ausgewählten Spielern gibt löschen wir es hier
+						//falls es schon array mit den ausgewï¿½hlten Spielern gibt lï¿½schen wir es hier
 						if(playerselected)
 							delete [] playerselected;
 						playerselected=new int[num_player];
@@ -548,7 +548,7 @@ void cMenu::update_modi()
 						menustate=MSTATE_PLAYERSELECT;
 						pPlayerMan->create(num_player);
 						
-						//falls es schon array mit den ausgewählten Spielern gibt löschen wir es hier
+						//falls es schon array mit den ausgewï¿½hlten Spielern gibt lï¿½schen wir es hier
 						if(playerselected)
 							delete [] playerselected;
 
@@ -560,7 +560,7 @@ void cMenu::update_modi()
 						menustate=MSTATE_LEVELSELECT;
 						pPlayerMan->create(num_player);
 
-						//falls es schon array mit den ausgewählten Spielern gibt löschen wir es hier
+						//falls es schon array mit den ausgewï¿½hlten Spielern gibt lï¿½schen wir es hier
 						if(playerselected)
 							delete [] playerselected;
 						playerselected=new int[num_player];
@@ -624,7 +624,7 @@ void cMenu::update_stageselect()
 	selection[2].h=400;
 	selection[2].w=380;
 
-	///ins spielmodus-menü zurück
+	///ins spielmodus-menï¿½ zurï¿½ck
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -638,7 +638,7 @@ void cMenu::update_stageselect()
 	{
 		if(pUtil->collision(selection[i],mouse))
 		{
-			///wir schaun auch noch gerade nach wenn der mausbutton gedrückt wurde
+			///wir schaun auch noch gerade nach wenn der mausbutton gedrï¿½ckt wurde
 			if(pKeyboard->getmousepressed()>0)
 			{
 				pSound->playwav(2);
@@ -711,7 +711,7 @@ void cMenu::update_playerselect()
 	selection[2].h=400;
 	selection[2].w=380;
 
-	///ins stageselect-menü zurück
+	///ins stageselect-menï¿½ zurï¿½ck
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -730,7 +730,7 @@ void cMenu::update_playerselect()
 	{
 		if(pUtil->collision(selection[i],mouse))
 		{
-			///wir schaun auch noch gerade nach wenn der mausbutton gedrückt wurde
+			///wir schaun auch noch gerade nach wenn der mausbutton gedrï¿½ckt wurde
 			if(pKeyboard->getmousepressed()>0)
 			{
 				pSound->playwav(2);
@@ -765,13 +765,13 @@ void cMenu::update_playerselect()
 	}
 }
 
-////menuü-status setzen
+////menuï¿½-status setzen
 void cMenu::setmenustate(int state)
 {
 	menustate=state;
 }
 
-///alle klassen sowie daten für das spiel werden erstellt
+///alle klassen sowie daten fï¿½r das spiel werden erstellt
 bool cMenu::loadgamedata()
 {
 	cPlayerMan	*pPlayerMan=cPlayerMan::getInstance();
@@ -811,7 +811,7 @@ bool cMenu::loadgamedata()
 	pEnemyMan->destroy();
 	pEnemyMan->create();
 	
-	sprintf(buffer,"/usr/local/games/gunocide2ex/lvl/stage%i.lvl\0",(stageselected*5)+1);
+	sprintf(buffer,"/usr/local/games/gunocide2ex/lvl/stage%i.lvl",(stageselected*5)+1);
 	if(!pStage->load(buffer,pEnemyMan))
 		return false;
 
@@ -827,7 +827,7 @@ bool cMenu::loadgamedata()
 		return false;
 
 	///musik abspielen
-	sprintf(buffer,"/usr/local/games/gunocide2ex/sfx/track%i.ogg\0",stageselected+1);
+	sprintf(buffer,"/usr/local/games/gunocide2ex/sfx/track%i.ogg",stageselected+1);
 	pSound->stopogg();
 	pSound->playogg(buffer);
 
@@ -857,7 +857,7 @@ void cMenu::update_highscore()
 	if(pHScore->entername())
 		pHScore->update();
 
-	///ins stageselect-menü zurück
+	///ins stageselect-menï¿½ zurï¿½ck
 	kevent=pKeyboard->getkey(SDLK_ESCAPE);
 	if(kevent && kevent->pressed==1)
 	{
@@ -867,7 +867,7 @@ void cMenu::update_highscore()
 		kevent=NULL;
 	} else kevent=NULL;
 
-	//nächste highscores anzeigen
+	//nï¿½chste highscores anzeigen
 	if(pKeyboard->getmousepressed()>0)
 	{
 		scoreselected++;

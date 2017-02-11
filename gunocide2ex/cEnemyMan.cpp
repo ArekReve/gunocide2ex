@@ -44,10 +44,10 @@ bool cEnemyMan::load()
 {
 	char buffer[256];
 
-	//falls es fehlschlägt eine Grafik zu laden, gehen wir direkt raus!
+	//falls es fehlschlï¿½gt eine Grafik zu laden, gehen wir direkt raus!
 	for(int i=0;i<7;i++)
 	{
-		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/gegner/%i/%i.txt\0",i,i);
+		sprintf(buffer,"/usr/local/games/gunocide2ex/gfx/gegner/%i/%i.txt",i,i);
 		if(!gfx_sprite[i].load(buffer))
 			return false;
 
@@ -58,8 +58,8 @@ bool cEnemyMan::load()
 }
 
 ///erstellen des Arrays an Gegnern
-///ich gehe über den Pointer so das der Desktrutor bzw. Konstruktur
-///für mich die Initialisierung und so weiter...anders ist's zu umständlich ;)
+///ich gehe ï¿½ber den Pointer so das der Desktrutor bzw. Konstruktur
+///fï¿½r mich die Initialisierung und so weiter...anders ist's zu umstï¿½ndlich ;)
 bool cEnemyMan::create()
 {
 	if(!pEnemy)
@@ -69,7 +69,7 @@ bool cEnemyMan::create()
 	return false;
 }
 
-///das Array an Gegnern aus dem Speicher löschen
+///das Array an Gegnern aus dem Speicher lï¿½schen
 bool cEnemyMan::destroy()
 {
 	if(pEnemy)
@@ -82,7 +82,7 @@ bool cEnemyMan::destroy()
 	return false;
 }
 
-///einen Gegner hinzufügen
+///einen Gegner hinzufï¿½gen
 void cEnemyMan::add(int index,int x,int y,int typ,int pwuptyp)
 {
 	pEnemy[index].setposx(x);
@@ -199,13 +199,13 @@ void cEnemyMan::render(SDL_Surface *screen)
 	}
 }
 
-///die Adresse eines bestimmten Enemy-Objektes zurückgeben
+///die Adresse eines bestimmten Enemy-Objektes zurï¿½ckgeben
 cEnemy* cEnemyMan::getenemy(int index)
 {
 	return &pEnemy[index];
 }
 
-///gibt das Kollisionsrechtecke für einen Gegner zurück
+///gibt das Kollisionsrechtecke fï¿½r einen Gegner zurï¿½ck
 SDL_Rect cEnemyMan::getcolrect(int index)
 
 {
@@ -233,7 +233,7 @@ void cEnemyMan::delInstance()
 	}
 }
 
-///geht alle Gegner durch und gibt ein true zurück wenn alle gegner
+///geht alle Gegner durch und gibt ein true zurï¿½ck wenn alle gegner
 ///tot sind oder wie auch immer
 bool cEnemyMan::checkenemies()
 {
@@ -257,7 +257,7 @@ void cEnemyMan::setenemyattack(bool wert)
 		enemyattack_delay=SDL_GetTicks();
 }
 /************************************************************************
-Variablen für die Energie der Gegner
+Variablen fï¿½r die Energie der Gegner
 *************************************************************************/
 int EnemyVars::Energy[7]={
 						5,//enforcer
